@@ -7,11 +7,13 @@ import com.example.freemarket.di.module.ApplicationModule
 import com.example.freemarket.di.module.ConnectionModule
 import com.example.freemarket.di.scope.ApplicationContext
 import dagger.Component
+import dagger.Provides
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [(ApplicationModule::class), (ConnectionModule::class)])
 interface ApplicationComponent {
+
     @ApplicationContext
     fun context():Context
 

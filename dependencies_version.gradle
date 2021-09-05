@@ -1,0 +1,116 @@
+
+allprojects{
+    repositories{
+        flatDir{
+            dirs 'libs'
+        }
+    }
+}
+
+ext{
+    // Libraries test
+    mockitoCoreVersion = '2.7.22'
+    mockitoKotlinVersion = '1.1.0'
+    espressoCoreVersion = '2.2.2'
+    juniVersion = '4.12'
+
+    // Libraries rx
+    rxAndroidVersion = '2.0.2'
+    rxJavaAdapter = '2.3.0'
+    rxJavaVersion = '1.1.6'
+    rxKotlinVersion = '2.0.0'
+
+    // dagger
+    daggerVersion = '2.11'
+
+    // Retrofit
+    retrofitVersion = '2.3.0'
+    converterGsonVersion = '2.1.0'
+    loggingInterceptorVersion = '3.6.0'
+
+
+    // Libraries
+    androidLibs = [
+
+/**
+ * MPAndroidChart⚡️ is a powerful & easy to use chart library for Android. It runs on API level 8 and upwards.
+ *
+ *@linkhttps://github.com/PhilJay/MPAndroidChart
+ *@licensehttp://www.apache.org/
+/**
+ * Type-safe HTTP client for Android and Java by Square, Inc.
+ *@supportminimum Java 7 or Android 2.3 and above
+ *@linkhttps://github.com/square/retrofit
+ *@licenseApache License 2.0 [https://github.com/square/retrofit/blob/master/LICENSE.txt]
+ */
+httpRequest           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+
+/**
+ * A Converter which uses Gson for serialization to and from JSON.
+ *@supportminimum Java 7 or Android 2.3 and above
+ *@linkhttps://github.com/square/retrofit/tree/master/retrofit-converters
+ *@licenseApache License 2.0 [https://github.com/square/retrofit/blob/master/LICENSE.txt]
+ */
+converterJson         : "com.squareup.retrofit2:converter-gson:${converterGsonVersion}",
+
+/**
+ * Logging Interceptor An OkHttp interceptor which logs HTTP request and response data.
+ *@supportOkHttp supports Android 2.3 and above. For Java, the minimum requirement is 1.7
+ *@linkhttps://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
+ *@licenseApache License 2.0 [https://github.com/square/okhttp/blob/master/LICENSE.txt]
+ */
+interceptorLogsHTTP   : "com.squareup.okhttp3:logging-interceptor:${loggingInterceptorVersion}",
+
+/**
+ * This module adds the minimum classes to RxJava that make writing reactive components in Android applications easy and hassle-free
+ *@supportsupports Android 2.3 and above. For Java, the minimum requirement is 1.7
+ *@linkhttps://github.com/ReactiveX/RxAndroid
+ *@licenseApache License 2.0 [https://github.com/ReactiveX/RxAndroid/blob/2.x/LICENSE.txt]
+ */
+reactivexAndroid      : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+
+/**
+ * Retrofit ships with a default adapter for executing Call instances. The child modules contained herein are additional adapters for other popular execution mechanisms.
+ *@supportOkHttp supports Android 2.3 and above. For Java, the minimum requirement is 1.7
+ *@linkhttps://github.com/ReactiveX/RxAndroid
+ *@licenseApache License 2.0 [https://github.com/square/retrofit/blob/master/LICENSE.txt]
+ */
+
+rxKotlin               : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+
+adapteReactivexAndroid: "com.squareup.retrofit2:adapter-rxjava2:${rxJavaAdapter}",
+
+dagger                : "com.google.dagger:dagger:${daggerVersion}",
+
+daggerCompiler        : "com.google.dagger:dagger-compiler:${daggerVersion}",
+
+jetbrains             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+
+    ]
+
+    testLibs = [
+/**
+ * API set for UI composite tests
+ *@supportsupports Android 2.2 and above.
+ *@linkhttps://google.github.io/android-testing-support-library/docs/espresso/setup/
+ *@licenseApache License 2.0
+ */
+espressoCoreVersion: "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}",
+
+/**
+ * Framework to write repeatable tests.
+ *@linkhttps://github.com/junit-team/junit
+ *@licenseEclipse Public License - v 1.0 [https://github.com/junit-team/junit/blob/master/LICENSE-junit.txt]
+ */
+junit              : "junit:junit:${juniVersion}",
+
+/**
+ * Tasty mocking framework for unit tests.
+ *@linkhttp://site.mockito.org/
+ *@licenseThe MIT License [https://github.com/mockito/mockito/blob/master/LICENSE]
+ */
+mockito            : "org.mockito:mockito-core:${mockitoCoreVersion}",
+mockitoKotlin      : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
+    ]
+
+}

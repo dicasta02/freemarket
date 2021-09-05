@@ -8,7 +8,7 @@ import com.example.freemarket.di.module.ApplicationModule
 
 class CustomApp : Application() {
     lateinit var applicationComponent: ApplicationComponent
-    private set
+        private set
 
     override fun onCreate() {
         super.onCreate()

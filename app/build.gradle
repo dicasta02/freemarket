@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -22,10 +23,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", 'BASE_URL', '"http://directotesting.igapps.co_PRODUCCION"'
+            buildConfigField "boolean", 'DEBUG', 'false'
         }
         debug {
             minifyEnabled false
-            buildConfigField "String", 'BASE_URL', '"http://directotesting.igapps.co"'
+            buildConfigField "boolean", 'DEBUG', 'true'
         }
     }
 
@@ -61,28 +63,29 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
-//Mokito
+    //Mokito
     testImplementation 'org.mockito:mockito-core:2.19.1'
 
-// Dagger
+    // Dagger
     implementation 'com.google.dagger:dagger:2.11'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
 
-// Butter Knife
+    // Butter Knife
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
-// Retrofit
+    // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
-// Login Interceptor
+    // Login Interceptor
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
-// Reactive
+    // Reactive
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
-
+    // Spring Animation
+    compile 'com.facebook.rebound:rebound:0.3.8'
 }
