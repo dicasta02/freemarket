@@ -1,10 +1,5 @@
-package co.com.softpolaris.amanthulerp.utilities
+package com.example.freemarket.utilities
 
-/**
- * @author dacastano
- * @version 1.0
- * @since 17/11/2017
- */
 class SpringInterpolator : android.view.animation.Interpolator {
     private val mCycles: Float
     private val mDamping: Float

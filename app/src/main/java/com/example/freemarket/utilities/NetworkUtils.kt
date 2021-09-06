@@ -10,7 +10,7 @@ object NetworkUtils {
         val connectivityManager = context
             .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return if (connectivityManager != null) {
-            if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 val network = connectivityManager.activeNetwork
                 val capabilities = connectivityManager.getNetworkCapabilities(network)
                 capabilities != null && (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)

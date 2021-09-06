@@ -1,4 +1,4 @@
-package co.com.softpolaris.amanthulerp.utilities
+package com.example.freemarket.utilities
 
 import android.content.Context
 import android.graphics.Typeface
@@ -6,12 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 
-/**
- * @author dacastano
- * @version 1.0
- * @since 16/11/2017
- */
-class FontHelper (private val context: Context) {
+class FontHelper(private val context: Context) {
     private var REGULAR: Typeface? = null
     private var BOLD: Typeface? = null
 

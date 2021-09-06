@@ -1,7 +1,7 @@
 package com.example.freemarket.ui.search
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.freemarket.R
 
 class SearchActivity : AppCompatActivity() {

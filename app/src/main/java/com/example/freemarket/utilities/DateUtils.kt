@@ -1,6 +1,5 @@
 package com.example.freemarket.utilities
 
-import android.text.format.DateUtils.isToday
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -8,20 +7,23 @@ import java.util.*
 object DateUtils {
     val currentDateFormat: String
         get() {
-            val dateFormat: DateFormat = SimpleDateFormat(Constants.DATE_FORMAT, Locale.getDefault())
+            val dateFormat: DateFormat =
+                SimpleDateFormat(Constants.DATE_FORMAT, Locale.getDefault())
             return dateFormat.format(Date())
         }
 
     val currentDateTimeFormat: String
         get() {
-            val dateFormat: DateFormat = SimpleDateFormat(Constants.DATE_TIME_FORMAT, Locale.getDefault())
+            val dateFormat: DateFormat =
+                SimpleDateFormat(Constants.DATE_TIME_FORMAT, Locale.getDefault())
             return dateFormat.format(Date())
         }
 
     @kotlin.jvm.JvmStatic
     val currentDateShortFormat: String
         get() {
-            val dateFormat: DateFormat = SimpleDateFormat(Constants.DATE_FORMAT_SHORT, Locale.getDefault())
+            val dateFormat: DateFormat =
+                SimpleDateFormat(Constants.DATE_FORMAT_SHORT, Locale.getDefault())
             return dateFormat.format(Date())
         }
 

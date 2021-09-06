@@ -22,8 +22,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     companion object {
         @JvmStatic
         private val KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID"
+
         @JvmStatic
         private val NEXT_ID = AtomicLong(0)
+
         @JvmStatic
         private val componentsMap = HashMap<Long, ConfigPersistentComponent>()
     }
@@ -41,10 +43,16 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         activityId = savedInstanceState?.getLong(KEY_ACTIVITY_ID) ?: NEXT_ID.getAndIncrement()
 
         if (componentsMap[activityId] != null)
-            LogManager(c = BaseActivity::class.java).printInfo("Reusing ConfigPersistentComponent id=%d", activityId)
+            LogManager(c = BaseActivity::class.java).printInfo(
+                "Reusing ConfigPersistentComponent id=%d",
+                activityId
+            )
 
-        val configPersistentComponent = componentsMap.getOrPut(activityId,{
-            LogManager(c = BaseActivity::class.java).printInfo("Creating new ConfigPersistentComponent id=%d", activityId)
+        val configPersistentComponent = componentsMap.getOrPut(activityId, {
+            LogManager(c = BaseActivity::class.java).printInfo(
+                "Creating new ConfigPersistentComponent id=%d",
+                activityId
+            )
 
             val component = (applicationContext as CustomApp).applicationComponent
 

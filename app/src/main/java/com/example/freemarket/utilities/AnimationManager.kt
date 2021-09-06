@@ -1,13 +1,7 @@
-package co.com.softpolaris.amanthulerp.utilities
+package com.example.freemarket.utilities
 
-import android.graphics.Interpolator
 import android.view.animation.*
 
-/**
- * @author dacastano
- * @version 1.0
- * @since 17/11/2017
- */
 class AnimationManager {
     /**
      * Create translate animation, the values are took with type RELATIVE_TO_SELF,
@@ -20,8 +14,24 @@ class AnimationManager {
      * @param interpolator Required interpolator, default is AccelerateDecelerateInterpolator.
      * @return Translate Animation whit required params
      */
-    fun getTranslateAnim(fromX: Float, toX: Float, fromY: Float, toY: Float, duration: Int, interpolator: android.view.animation.Interpolator?): Animation {
-        val translate = TranslateAnimation(Animation.RELATIVE_TO_SELF, fromX, Animation.RELATIVE_TO_SELF, toX, Animation.RELATIVE_TO_SELF, fromY, Animation.RELATIVE_TO_SELF, toY)
+    fun getTranslateAnim(
+        fromX: Float,
+        toX: Float,
+        fromY: Float,
+        toY: Float,
+        duration: Int,
+        interpolator: android.view.animation.Interpolator?
+    ): Animation {
+        val translate = TranslateAnimation(
+            Animation.RELATIVE_TO_SELF,
+            fromX,
+            Animation.RELATIVE_TO_SELF,
+            toX,
+            Animation.RELATIVE_TO_SELF,
+            fromY,
+            Animation.RELATIVE_TO_SELF,
+            toY
+        )
         translate.interpolator = interpolator ?: AccelerateDecelerateInterpolator()
         translate.duration = duration.toLong()
 
@@ -43,8 +53,20 @@ class AnimationManager {
      * @param interpolator Required interpolator, default is AccelerateDecelerateInterpolator.
      * @return Translate Animation whit required params
      */
-    fun getTranslateAnim(typeFromX: Int, fromX: Float, typeToX: Int, toX: Float, typeFromY: Int, fromY: Float, typeToY: Int, toY: Float, duration: Int, interpolator: android.view.animation.Interpolator?): Animation {
-        val translate = TranslateAnimation(typeFromX, fromX, typeToX, toX, typeFromY, fromY, typeToY, toY)
+    fun getTranslateAnim(
+        typeFromX: Int,
+        fromX: Float,
+        typeToX: Int,
+        toX: Float,
+        typeFromY: Int,
+        fromY: Float,
+        typeToY: Int,
+        toY: Float,
+        duration: Int,
+        interpolator: android.view.animation.Interpolator?
+    ): Animation {
+        val translate =
+            TranslateAnimation(typeFromX, fromX, typeToX, toX, typeFromY, fromY, typeToY, toY)
         translate.interpolator = interpolator ?: AccelerateDecelerateInterpolator()
         translate.duration = duration.toLong()
 
@@ -66,7 +88,18 @@ class AnimationManager {
      * @param interpolator Required interpolator, default is AccelerateDecelerateInterpolator.
      * @return Scale Animation whit required params
      */
-    fun getScaleAnim(fromX: Float, toX: Float, fromY: Float, toY: Float, typePivotX: Int, pivotX: Float, typePivotY: Int, pivotY: Float, duration: Int, interpolator: android.view.animation.Interpolator?): Animation {
+    fun getScaleAnim(
+        fromX: Float,
+        toX: Float,
+        fromY: Float,
+        toY: Float,
+        typePivotX: Int,
+        pivotX: Float,
+        typePivotY: Int,
+        pivotY: Float,
+        duration: Int,
+        interpolator: android.view.animation.Interpolator?
+    ): Animation {
         val scale = ScaleAnimation(fromX, toX, fromY, toY, typePivotX, pivotX, typePivotY, pivotY)
         scale.interpolator = interpolator ?: AccelerateDecelerateInterpolator()
         scale.duration = duration.toLong()
@@ -83,7 +116,12 @@ class AnimationManager {
      * @param interpolator Required interpolator, default is AccelerateDecelerateInterpolator.
      * @return Alpha Animation whit required params
      */
-    fun getAlphaAnim(fromAlpha: Float, toAlpha: Float, duration: Int, interpolator: android.view.animation.Interpolator?): Animation {
+    fun getAlphaAnim(
+        fromAlpha: Float,
+        toAlpha: Float,
+        duration: Int,
+        interpolator: android.view.animation.Interpolator?
+    ): Animation {
         val alpha = AlphaAnimation(fromAlpha, toAlpha)
         alpha.interpolator = interpolator ?: AccelerateDecelerateInterpolator()
         alpha.duration = duration.toLong()

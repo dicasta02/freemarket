@@ -10,9 +10,9 @@ class SplashPresenter @Inject constructor() : BasePresenter<SplashView>() {
     @Inject
     internal lateinit var context: Context
 
-    val SPLASH_DELAY = TimeUnit.SECONDS.toMillis(2)
+    private val SPLASH_DELAY = TimeUnit.SECONDS.toMillis(2)
 
-    fun setDestiny(){
+    fun setDestiny() {
         SystemClock.sleep(SPLASH_DELAY)
         view.showSearchActivity()
     }

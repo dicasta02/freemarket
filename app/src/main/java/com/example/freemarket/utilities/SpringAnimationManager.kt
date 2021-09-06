@@ -1,4 +1,4 @@
-package co.com.softpolaris.amanthulerp.utilities
+package com.example.freemarket.utilities
 
 import android.os.Handler
 import android.view.View
